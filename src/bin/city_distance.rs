@@ -54,22 +54,23 @@ fn main() {
         "Distance between {} and {}: {} km",
         tokyo.name,
         paris.name,
-        tokyo.distance_to(&paris)
+        format!("{:.4}",tokyo.distance_to(&paris))
     );
     println!(
         "Distance between {} and {}: {} km",
         rome.name,
         tokyo.name,
-        rome.distance_to(&tokyo)
+        format!("{:.4}",rome.distance_to(&tokyo))
     );
     println!(
         "Distance between {} and {}: {} km",
         berlin.name,
         rome.name,
-        berlin.distance_to(&rome)
+        format!("{:.4}", berlin.distance_to(&rome))
     );
 
     // Example using Coordinates directly
     let coord1 = Coordinates::new(52.5200, 13.4050); // Berlin
     let coord2 = Coordinates::new(48.8566, 2.3522); // Paris
-    println!("Distance between Berlin and Paris: {} km", coord1.distance_to(&coord2));
+    println!("Distance between Berlin and Paris: {} km", format!("{:.4}", coord1.distance_to(&coord2)));
+}
