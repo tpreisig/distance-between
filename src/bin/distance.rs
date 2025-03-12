@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-// This Rust program defines a `Coordinates` struct to represent geographical coordinates (latitude and longitude) and implements methods for calculating the distance between two points on the Earth's surface using the Haversine formula. The `main` function demonstrates how to use this struct and method to calculate the distance between Berlin, Germany, and Paris, France.
+// This Rust program defines a `Coordinates` struct to represent geographical coordinates (latitude and longitude) and implements methods for calculating the distance between two points on the Earth's surface using the Haversine formula. 
 
 struct Coordinates {
     latitude: f64,
@@ -29,12 +29,14 @@ fn main() {
     let coord7 = Coordinates::new(22.56, 113.89); // Shenzhen
 
     let coord8 = {
-        latitude : 47.0,
-        longitude: 8.5,
-    }; // Zurich
+        Coordinates { // Zurich
+            latitude : 47.0,
+            longitude: 8.5,
+        }
+    }; 
     
 
-    println!("Distance between Berlin and Paris: {} km", coord1.distance_to(&coord2)); 
+    println!("Distance between Zurich and Paris: {} km", format!("{:.4}", coord8.distance_to(&coord2))); 
 }   
 
 
